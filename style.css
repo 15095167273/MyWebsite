@@ -1,0 +1,125 @@
+/* 定义全局变量 */
+:root {
+  --primary-color: #1e90ff;  /* 初始蓝色 */
+  --background-color: #121212;
+  --accent-color: #ff4081;
+  --font-color: #ffffff;
+  --transition-duration: 0.3s;
+}
+
+/* 基础样式 */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--font-color);
+  transition: background-color var(--transition-duration);
+}
+
+/* 头部样式 */
+header {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+}
+
+/* 导航菜单 */
+nav {
+  margin-top: 1rem;
+}
+nav a {
+  margin: 0 1rem;
+  color: var(--font-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: var(--primary-color);
+}
+
+/* 主题切换按钮 */
+.theme-toggle button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--accent-color);
+  color: var(--font-color);
+  cursor: pointer;
+  transition: background-color var(--transition-duration), transform var(--transition-duration);
+}
+.theme-toggle button:hover {
+  background-color: var(--primary-color);
+}
+.theme-toggle button:active {
+  transform: scale(0.95);
+}
+
+/* 粒子背景效果及动画 */
+#particle-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05), transparent);
+  z-index: -1;
+  animation: pulse 3s infinite;
+}
+
+/* 主体内容及渐入动画 */
+main {
+  padding: 2rem;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+/* 各板块样式 */
+section {
+  padding: 2rem;
+  margin-top: 1rem;
+}
+
+/* “关于我们”板块背景 */
+#about {
+  background-color: #1a1a1a;
+}
+
+/* “我们的服务”板块背景 */
+#services {
+  background-color: #101010;
+}
+
+/* 底部样式 */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #222;
+}
+
+/* 动画关键帧 */
+@keyframes pulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  header {
+    padding: 2rem 1rem;
+  }
+  .theme-toggle button {
+    margin: 0.3rem;
+    padding: 0.4rem 0.8rem;
+  }
+  main {
+    padding: 1rem;
+  }
+  footer {
+    font-size: 0.9rem;
+  }
+}
